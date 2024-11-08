@@ -1,2 +1,16 @@
-@set NameInput
+@back Street_1 id:Location1
+
+#namePick
+Lucy: "What's your name?"
+@input PlayerName
+@stop
+
+Lucy: "Your name is {PlayerName}?"
+
+@choice "Yes"
+@choice "No" goto:.namePick
+@stop
+
+Lucy: "Well then, {PlayerName}..."
+
 @stop
