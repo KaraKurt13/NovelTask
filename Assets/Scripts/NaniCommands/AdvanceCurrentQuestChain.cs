@@ -4,18 +4,23 @@ using UnityEngine;
 using System.Reflection;
 using System.Threading;
 using Assets.Scripts.Quests;
+using Assets.Scripts.Main;
 
-[CommandAlias("advanceQuestChain")]
-public class AdvanceCurrentQuestChain : Command
+namespace Assets.Scripts.Nanicommands
 {
-    public override UniTask ExecuteAsync(AsyncToken asyncToken = default)
+    [CommandAlias("advanceQuestChain")]
+    public class AdvanceCurrentQuestChain : Command
     {
-        var questTracker = GameObject.FindAnyObjectByType<QuestTracker>();
-        if (questTracker != null)
+        public override UniTask ExecuteAsync(AsyncToken asyncToken = default)
         {
-            questTracker.AdvanceCurrentQuestChain();
-        }
+            /*var questTracker = GameObject.FindAnyObjectByType<QuestTracker>();
+            if (questTracker != null)
+            {
+                questTracker.AdvanceCurrentQuestChain();
+            }*/
 
-        return UniTask.CompletedTask;
+            Find.QuestTracker.AdvanceCurrentQuestChain();
+            return UniTask.CompletedTask;
+        }
     }
 }

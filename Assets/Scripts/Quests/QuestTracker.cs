@@ -20,6 +20,9 @@ namespace Assets.Scripts.Quests
 
         public void AdvanceCurrentQuestChain()
         {
+            Debug.Log("advanced!");
+            if (CurrentQuestChain == null) return;
+
             CurrentQuestChain.Advance();
             if (CurrentQuestChain.IsCompleted)
             {

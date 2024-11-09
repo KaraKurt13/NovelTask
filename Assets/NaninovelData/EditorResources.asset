@@ -119,6 +119,9 @@ MonoBehaviour:
     - name: QuestTracker
       pathPrefix: Spawn
       guid: 5de3674de0a0a544c89130104015b816
+    - name: 
+      pathPrefix: Spawn
+      guid: 
   - Id: UI
     Resources:
     - name: ClickThroughPanel
@@ -166,6 +169,9 @@ MonoBehaviour:
     - name: ToastUI
       pathPrefix: UI
       guid: dd85ce99288c2f8488447fa511b1c0d6
+    - name: MapUI
+      pathPrefix: UI
+      guid: 7e0c7dc8df0b3d04ba243618e08be141
   - Id: Scripts
     Resources:
     - name: Start

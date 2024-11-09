@@ -1,13 +1,14 @@
 using Assets.Scripts.Locations;
 using Assets.Scripts.UI;
+using Naninovel.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Scripts.Main
+namespace Assets.Scripts.UI
 {
-    public class MapController : MonoBehaviour
+    public class MapComponent : MonoBehaviour
     {
         public Dictionary<LocationEnum, Location> Locations = new();
 

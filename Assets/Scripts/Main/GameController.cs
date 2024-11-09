@@ -1,3 +1,4 @@
+using Assets.Scripts.Quests;
 using Naninovel;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace Assets.Scripts.Main
         {
             Find.ScriptManager = Engine.GetService<IScriptManager>();
             Find.BackgroundManager = Engine.GetService<IBackgroundManager>();
+            Find.QuestTracker = FindAnyObjectByType<QuestTracker>();
         }
     }
 }
