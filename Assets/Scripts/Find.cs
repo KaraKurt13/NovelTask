@@ -8,5 +8,7 @@ namespace Assets.Scripts.Main
     public static class Find
     {
         public static IScriptManager ScriptManager { get; set; }
+
+        public static IBackgroundManager BackgroundManager { get; set; }
     }
 }

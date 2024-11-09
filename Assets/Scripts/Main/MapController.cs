@@ -1,7 +1,9 @@
 using Assets.Scripts.Locations;
+using Assets.Scripts.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Main
 {
@@ -9,9 +11,20 @@ namespace Assets.Scripts.Main
     {
         public Dictionary<LocationEnum, Location> Locations = new();
 
+        [SerializeField] List<LocationSubcomponent> _locationsSubcomponents;
+
+        [SerializeField] Button _backButton;
+
+        private LocationEnum _currentLocation;
+
         public void LoadLocation(LocationEnum location)
         {
 
+        }
+
+        private void Awake()
+        {
+            InitLocations();
         }
 
         private void InitLocations()
@@ -20,7 +33,7 @@ namespace Assets.Scripts.Main
             {
                 { 
                     LocationEnum.Location1,
-                    new Location("Location1", LocationStatus.Locked, "")
+                    new Location("Location1", LocationStatus.Unlocked, "")
                 },
                 {
                     LocationEnum.Location2,
@@ -32,6 +45,17 @@ namespace Assets.Scripts.Main
                 }
             };
 
+            foreach (var  location in _locationsSubcomponents)
+            {
+                var locationType = location.LocationType;
+                location.RelatedLocation = Locations[locationType];
+                location.Activate();
+            }
+        }
+
+        private void OnEnable()
+        {
+            _backButton.interactable = _currentLocation != LocationEnum.None ? true : false;
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Assets.Scripts.Main
         private void Awake()
         {
             Find.ScriptManager = Engine.GetService<IScriptManager>();
+            Find.BackgroundManager = Engine.GetService<IBackgroundManager>();
         }
     }
 }
