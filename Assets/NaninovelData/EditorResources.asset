@@ -113,6 +113,12 @@ MonoBehaviour:
     - name: Blur
       pathPrefix: Spawn
       guid: e466d9326b30a4b49a3dad428b4d9968
+    - name: GameController
+      pathPrefix: Spawn
+      guid: 8b8ac4e474e2e36469a089d3dee55ccf
+    - name: QuestTracker
+      pathPrefix: Spawn
+      guid: 5de3674de0a0a544c89130104015b816
   - Id: UI
     Resources:
     - name: ClickThroughPanel
