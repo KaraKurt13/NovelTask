@@ -15,14 +15,6 @@ namespace Assets.Scripts.Locations
 
         public string CurrentStoryScript { get; private set; }
 
-        public void OnEnter()
-        {
-            if (CurrentStoryScript != string.Empty)
-            {
-                Find.ScriptManager.LoadScriptAsync(CurrentStoryScript);
-            }
-        }
-
         public void SetScript(string script)
         {
             CurrentStoryScript = script;

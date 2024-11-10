@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LocationType: 0
-  Button: {fileID: 4515083565180303302}
+  _button: {fileID: 4515083565180303302}
   _lockImage: {fileID: 5069432854496561881}
   _glowImage: {fileID: 8519355628011271496}
   _nameText: {fileID: 2041625326901158506}

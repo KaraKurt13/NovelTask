@@ -27,9 +27,7 @@
       &lt;Actor&gt;
         &lt;Id&gt;MainBackground&lt;/Id&gt;
         &lt;Type&gt;Backgrounds&lt;/Type&gt;
-        &lt;Appearances&gt;
-          &lt;string&gt;Daily&lt;/string&gt;
-        &lt;/Appearances&gt;
+        &lt;Appearances /&gt;
       &lt;/Actor&gt;
       &lt;Actor&gt;
         &lt;Id&gt;ButtonList&lt;/Id&gt;
@@ -306,11 +304,7 @@
       &lt;/Resource&gt;
       &lt;Resource&gt;
         &lt;Path&gt;Daily&lt;/Path&gt;
-        &lt;Type&gt;Backgrounds/MainBackground&lt;/Type&gt;
-      &lt;/Resource&gt;
-      &lt;Resource&gt;
-        &lt;Path&gt;Daily&lt;/Path&gt;
-        &lt;Type&gt;Backgrounds/MainBackground&lt;/Type&gt;
+        &lt;Type&gt;Backgrounds/Start&lt;/Type&gt;
       &lt;/Resource&gt;
     &lt;/Resources&gt;
     &lt;Constants /&gt;

@@ -1,4 +1,5 @@
 using Assets.Scripts.Locations;
+using Assets.Scripts.Main;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,7 +14,7 @@ namespace Assets.Scripts.UI
 
         public Location RelatedLocation { get; set; }
 
-        public Button Button;
+        [SerializeField] Button _button;
 
         [SerializeField] GameObject _lockImage, _glowImage;
 
@@ -21,29 +22,22 @@ namespace Assets.Scripts.UI
 
         public void UpdateLocationStatus()
         {
-            var status = RelatedLocation.Status;
-            if (status == LocationStatus.Locked)
-                LockLocation();
-            else
-                UnlockLocation();
+            var isLocked = RelatedLocation.Status == LocationStatus.Locked;
+            ChangeLocationLock(isLocked);
         }
 
         public void Activate()
         {
             UpdateLocationStatus();
             _nameText.text = RelatedLocation.Name;
+            _button.onClick.AddListener(() => Find.MapComponent.LoadLocation(LocationType));
         }
 
-        private void LockLocation()
+        private void ChangeLocationLock(bool isLocked)
         {
-            _lockImage.SetActive(true);
-            _glowImage.SetActive(false);
-        }
-
-        private void UnlockLocation()
-        {
-            _lockImage.SetActive(false);
-            _glowImage.SetActive(true);
+            _lockImage.SetActive(isLocked);
+            _glowImage.SetActive(!isLocked);
+            _button.interactable = !isLocked;
         }
     }
 }

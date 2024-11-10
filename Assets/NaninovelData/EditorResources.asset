@@ -172,6 +172,9 @@ MonoBehaviour:
     - name: MapUI
       pathPrefix: UI
       guid: 7e0c7dc8df0b3d04ba243618e08be141
+    - name: Toolbar
+      pathPrefix: UI
+      guid: 981481781029a9e4c9ebe06a6cfc666d
   - Id: Scripts
     Resources:
     - name: Start
@@ -181,10 +184,7 @@ MonoBehaviour:
       pathPrefix: Scripts
       guid: 1a066045c83753e4fa04b4df347cae53
   - Id: Backgrounds/0f69fed4-4d0b-45b3-ab7e-9d0fa0a4e96b
-    Resources:
-    - name: Daily
-      pathPrefix: Backgrounds/MainBackground
-      guid: 16458c36b288d1a43b7b67198e7f6206
+    Resources: []
   - Id: Backgrounds/96f2ddb6-8807-4708-b2be-563e7bb43be0
     Resources:
     - name: Daily

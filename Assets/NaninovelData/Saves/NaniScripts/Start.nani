@@ -1,4 +1,4 @@
-@back Street id:Location1
+@back Street id:Main
 
 @spawn QuestTracker
 @spawn GameController
@@ -17,5 +17,7 @@ Lucy: "Your name is {PlayerName}?"
 @advanceQuestChain
 
 Lucy: "Well then, {PlayerName}..."
+
 @showUI MapUI
+@hidePrinter Dialogue
 @stop

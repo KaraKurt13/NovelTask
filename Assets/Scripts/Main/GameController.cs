@@ -1,4 +1,5 @@
 using Assets.Scripts.Quests;
+using Assets.Scripts.UI;
 using Naninovel;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,9 +11,11 @@ namespace Assets.Scripts.Main
     {
         private void Awake()
         {
-            Find.ScriptManager = Engine.GetService<IScriptManager>();
+            Find.ScriptPlayer = Engine.GetService<IScriptPlayer>();
             Find.BackgroundManager = Engine.GetService<IBackgroundManager>();
+            Find.UIManager = Engine.GetService<IUIManager>();
             Find.QuestTracker = FindAnyObjectByType<QuestTracker>();
+            Find.MapComponent = FindAnyObjectByType<MapComponent>();
         }
     }
 }
