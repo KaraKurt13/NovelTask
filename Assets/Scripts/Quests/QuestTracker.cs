@@ -19,7 +19,7 @@ namespace Assets.Scripts.Quests
             InitQuests();
         }
 
-        public void BeginNewQuestChain()
+        public void StartNewQuestChain()
         {
             var questChain = _questChains.Dequeue();
             CurrentQuestChain = questChain;
