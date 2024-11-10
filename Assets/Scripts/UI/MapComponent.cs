@@ -21,6 +21,14 @@ namespace Assets.Scripts.UI
 
         private LocationEnum _currentLocation;
 
+        public void UpdateMap()
+        {
+            foreach (var location in _locationsSubcomponents)
+            {
+                location.UpdateLocationStatus();
+            }
+        }
+
         public async void LoadLocation(LocationEnum location)
         {
             var loc = Locations[location];

@@ -14,6 +14,11 @@ namespace Assets.Scripts.Quests
 
         public bool IsCompleted = false;
 
+        public void OnStart()
+        {
+            CurrentQuest = _questsChane.Dequeue();
+        }
+
         public void Advance()
         {
             CurrentQuest.OnComplete();

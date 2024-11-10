@@ -11,7 +11,7 @@ namespace Assets.Scripts.Quests
 
         protected override string _description => "You need to visit {0}";
 
-        protected override OnQuestCompleteActionBase _onCompleteAction { get; set; }
+        protected override List<OnQuestCompleteActionBase> _onCompleteActions { get; set; } = new();
 
         private LocationEnum _targetLocation;
 
@@ -25,9 +25,16 @@ namespace Assets.Scripts.Quests
             return string.Format(_description, _targetLocation.ToString());
         }
 
-        public LocationVisitQuest(LocationEnum targetLocation)
+        public LocationVisitQuest(LocationEnum targetLocation, List<OnQuestCompleteActionBase> actions = null)
         {
             _targetLocation = targetLocation;
+            if (actions != null)
+            {
+                foreach (var action in actions)
+                {
+                    _onCompleteActions.Add(action);
+                }
+            }
         }
     }
 }

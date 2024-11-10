@@ -20,6 +20,12 @@ namespace Assets.Scripts.Locations
             CurrentStoryScript = script;
         }
 
+        public void SetLocationStatus(LocationStatus status)
+        {
+            Status = status;
+            Find.MapComponent.UpdateMap();
+        }
+
         public Location(string name, LocationStatus status, string currentStoryScript)
         {
             Name = name;

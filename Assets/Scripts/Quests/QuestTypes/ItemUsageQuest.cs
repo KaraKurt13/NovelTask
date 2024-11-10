@@ -4,29 +4,26 @@ using UnityEngine;
 
 namespace Assets.Scripts.Quests
 {
-    public class NPCTalkQuest : QuestBase
+    public class ItemUsageQuest : QuestBase
     {
-        protected override string _name => "Talking with {0}";
+        protected override string _name => "{0} usage.";
 
-        protected override string _description => "You need to talk to {0}";
+        protected override string _description => "Use {0} from your inventory.";
 
         protected override List<OnQuestCompleteActionBase> _onCompleteActions { get; set; } = new();
 
-        private CharacterEnum _targetNPC;
-
         public override string GetDescription()
         {
-            return string.Format(_description, _targetNPC.ToString());
+            return string.Format(_description);
         }
 
         public override string GetName()
         {
-            return string.Format(_name, _targetNPC.ToString());
+            return string.Format(_name);
         }
 
-        public NPCTalkQuest(CharacterEnum targetNPC, List<OnQuestCompleteActionBase> actions = null)
+        public ItemUsageQuest(List<OnQuestCompleteActionBase> actions = null)
         {
-            _targetNPC = targetNPC;
             if (actions != null)
             {
                 foreach (var action in actions)

@@ -1,4 +1,5 @@
 using Assets.Scripts.Locations;
+using Assets.Scripts.Main;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,9 @@ namespace Assets.Scripts.Quests
 
         public override void Execute()
         {
-            // Set new status for location
+            var map = Find.MapComponent;
+            map.Locations[_location].SetLocationStatus(_newStatus);
+            map.UpdateMap();
         }
 
         public LocationUpdateAction(LocationEnum location, LocationStatus newStatus)

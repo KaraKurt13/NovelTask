@@ -13,12 +13,6 @@ namespace Assets.Scripts.Nanicommands
     {
         public override UniTask ExecuteAsync(AsyncToken asyncToken = default)
         {
-            /*var questTracker = GameObject.FindAnyObjectByType<QuestTracker>();
-            if (questTracker != null)
-            {
-                questTracker.AdvanceCurrentQuestChain();
-            }*/
-
             Find.QuestTracker.AdvanceCurrentQuestChain();
             return UniTask.CompletedTask;
         }

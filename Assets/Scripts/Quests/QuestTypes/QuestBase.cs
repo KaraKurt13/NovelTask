@@ -10,7 +10,7 @@ namespace Assets.Scripts.Quests
 
         protected abstract string _description { get; }
 
-        protected abstract OnQuestCompleteActionBase _onCompleteAction { get; set; }
+        protected abstract List<OnQuestCompleteActionBase> _onCompleteActions { get; set; }
 
         public abstract string GetName();
 
@@ -18,7 +18,15 @@ namespace Assets.Scripts.Quests
 
         public virtual void OnComplete()
         {
-            _onCompleteAction?.Execute();
+            foreach (var action in _onCompleteActions)
+            {
+                action.Execute();
+            }
+        }
+
+        public QuestBase(List<OnQuestCompleteActionBase> _onCompleteactions = null)
+        {
+
         }
     }
 }

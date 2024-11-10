@@ -1,3 +1,4 @@
+using Assets.Scripts.Locations;
 using Assets.Scripts.Quests;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,16 +12,22 @@ namespace Assets.Scripts.Quests
 
         public List<QuestChain> CompletedQuests { get; private set; } = new();
 
-        private List<QuestChain> _questChains = new();
+        private Queue<QuestChain> _questChains = new();
 
         private void Start()
         {
             InitQuests();
         }
 
+        public void BeginNewQuestChain()
+        {
+            var questChain = _questChains.Dequeue();
+            CurrentQuestChain = questChain;
+            CurrentQuestChain.OnStart();
+        }
+
         public void AdvanceCurrentQuestChain()
         {
-            Debug.Log("advanced!");
             if (CurrentQuestChain == null) return;
 
             CurrentQuestChain.Advance();
@@ -34,6 +41,31 @@ namespace Assets.Scripts.Quests
 
         private void InitQuests()
         {
+            var quest1 = new NPCTalkQuest(CharacterEnum.Rebecca);
+            var quest2 = new MiniGameQuest(new List<OnQuestCompleteActionBase>()
+            {
+                new ItemRewardAction(),
+                new LocationUpdateAction(LocationEnum.Shop, LocationStatus.Locked),
+
+            });
+            var quest3 = new LocationVisitQuest(LocationEnum.Bar);
+            var quest4 = new LocationVisitQuest(LocationEnum.Basement);
+
+            var quests = new List<QuestBase>()
+            {
+                { new NPCTalkQuest(CharacterEnum.Rebecca) },
+                { new MiniGameQuest(new List<OnQuestCompleteActionBase>(){ }) },
+            };
+            
+            var questChain = new QuestChain(new List<QuestBase>
+            {
+                quest1,
+                quest2,
+                quest3,
+                quest4
+            });
+
+            _questChains.Enqueue(questChain);
         }
 
         public void OnQuestChainComplete()
