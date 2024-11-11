@@ -12,7 +12,7 @@ namespace Assets.Scripts.Quests
 
         protected override string _description => "Find {0} somwhere in the {1}";
 
-        protected override List<OnQuestCompleteActionBase> _onCompleteActions { get; set; } = new();
+        protected override List<ExecutableActionBase> _onCompleteActions { get; set; } = new();
 
         private LocationEnum _itemLocation;
 
@@ -28,7 +28,7 @@ namespace Assets.Scripts.Quests
             return string.Format(_name, _itemType);
         }
 
-        public FindItemQuest(ItemTypeEnum item, LocationEnum itemLocation, List<OnQuestCompleteActionBase> actions = null)
+        public FindItemQuest(ItemTypeEnum item, LocationEnum itemLocation, List<ExecutableActionBase> actions = null)
         {
             _itemType = item;
             _itemLocation = itemLocation;

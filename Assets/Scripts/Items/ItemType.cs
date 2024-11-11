@@ -1,3 +1,4 @@
+using Assets.Scripts.Quests;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

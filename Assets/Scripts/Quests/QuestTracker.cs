@@ -1,3 +1,4 @@
+using Assets.Scripts.Items;
 using Assets.Scripts.Locations;
 using Assets.Scripts.Quests;
 using System.Collections;
@@ -43,21 +44,26 @@ namespace Assets.Scripts.Quests
 
         private void InitQuests()
         {
-            var quest1 = new NPCTalkQuest(CharacterEnum.Rebecca, new List<OnQuestCompleteActionBase>()
+            var quest1 = new NPCTalkQuest(CharacterEnum.Rebecca, new List<ExecutableActionBase>()
             {
-                new LocationUpdateAction(LocationEnum.Bar, LocationStatus.Unlocked)
+                new LocationLockUpdateAction(LocationEnum.Bar, LocationStatus.Unlocked)
             });
-            var quest2 = new MiniGameQuest(new List<OnQuestCompleteActionBase>()
+            var quest2 = new MiniGameQuest(new List<ExecutableActionBase>()
             {
-                new LocationUpdateAction(LocationEnum.Shop, LocationStatus.Unlocked),
+                new LocationLockUpdateAction(LocationEnum.Shop, LocationStatus.Unlocked),
             });
-            var quest3 = new LocationVisitQuest(LocationEnum.Bar);
+            var quest3 = new FindItemQuest(ItemTypeEnum.Vase, LocationEnum.Bar, new List<ExecutableActionBase>()
+            {
+                new LocationLockUpdateAction(LocationEnum.Shop, LocationStatus.Locked),
+                new LocationScriptUpdateAction(LocationEnum.Basement,"Chapter4"),
+                new LocationLockUpdateAction(LocationEnum.Bar, LocationStatus.Locked)
+            });
             var quest4 = new LocationVisitQuest(LocationEnum.Basement);
 
             var quests = new List<QuestBase>()
             {
                 { new NPCTalkQuest(CharacterEnum.Rebecca) },
-                { new MiniGameQuest(new List<OnQuestCompleteActionBase>(){ }) },
+                { new MiniGameQuest(new List<ExecutableActionBase>(){ }) },
             };
             
             var questChain = new QuestChain(new List<QuestBase>

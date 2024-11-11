@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Quests
 {
-    public class LocationScriptUpdateAction : OnQuestCompleteActionBase
+    public class LocationScriptUpdateAction : ExecutableActionBase
     {
         private LocationEnum _location;
 

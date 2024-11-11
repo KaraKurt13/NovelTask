@@ -10,7 +10,7 @@ namespace Assets.Scripts.Quests
 
         protected override string _description => "Play minigame";
 
-        protected override List<OnQuestCompleteActionBase> _onCompleteActions { get; set; } = new();
+        protected override List<ExecutableActionBase> _onCompleteActions { get; set; } = new();
 
         public override string GetName()
         {
@@ -22,7 +22,7 @@ namespace Assets.Scripts.Quests
             return _description;
         }
 
-        public MiniGameQuest(List<OnQuestCompleteActionBase> actions = null)
+        public MiniGameQuest(List<ExecutableActionBase> actions = null)
         {
             if (actions != null)
             {

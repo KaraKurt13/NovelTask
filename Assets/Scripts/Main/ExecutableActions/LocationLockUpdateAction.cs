@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Quests
 {
-    public class LocationUpdateAction : OnQuestCompleteActionBase
+    public class LocationLockUpdateAction : ExecutableActionBase
     {
         private LocationEnum _location;
 
@@ -19,7 +19,7 @@ namespace Assets.Scripts.Quests
             map.UpdateMap();
         }
 
-        public LocationUpdateAction(LocationEnum location, LocationStatus newStatus)
+        public LocationLockUpdateAction(LocationEnum location, LocationStatus newStatus)
         {
             _location = location;
             _newStatus = newStatus;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Quests
 {
-    public abstract class OnQuestCompleteActionBase
+    public abstract class ExecutableActionBase
     {
         public abstract void Execute();
     }

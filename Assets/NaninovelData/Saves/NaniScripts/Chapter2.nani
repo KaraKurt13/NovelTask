@@ -8,6 +8,7 @@ Rebecca: "That was fun! You can find your reward in the Shop."
 
 @tryAdvanceQuestChain stepID:2
 @setLocationScript location:"Basement" scriptName:""
+@setLocationScript location:"Bar" scriptName:""
 @setLocationScript location:"Shop" scriptName:"Chapter3"
 
 @stop

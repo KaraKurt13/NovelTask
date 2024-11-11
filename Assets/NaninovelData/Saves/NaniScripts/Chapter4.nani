@@ -1,2 +1,7 @@
+@char Rebecca.Angry scale:1.5 look:right pos:30,0
+@char Lucy.Angry scale:1.3 look:right pos:60,0
+
+Lucy: "You need to give item to ME!"
+Rebecca: "DON'T YOU DARE, {PlayerName}! IT'S MINE!"
 
 @stop

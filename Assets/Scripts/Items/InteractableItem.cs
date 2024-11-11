@@ -1,6 +1,8 @@
 using Assets.Scripts.Main;
+using Assets.Scripts.Quests;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,13 +14,16 @@ namespace Assets.Scripts.Items
 
         [SerializeField] Button _button;
 
-        public int DataID;
+        private ExecutableActionBase OnUse;
+
+        public int DataID { get; set; }
 
         public void Activate()
         {
             var spawnData = Find.ItemsSpawner.ItemsSpawnData[DataID];
             _image.sprite = DataLibrary.ItemTypes[spawnData.Type].Sprite;
             _button.onClick.AddListener(PickUp);
+            OnUse = spawnData.OnUseAction;
         }
 
         public void PickUp()
@@ -26,6 +31,7 @@ namespace Assets.Scripts.Items
             var spawnData = Find.ItemsSpawner.ItemsSpawnData[DataID];
             spawnData.IsTaken = true;
             // add to player inv
+            OnUse?.Execute();
             Destroy(this.gameObject);
         }
     }

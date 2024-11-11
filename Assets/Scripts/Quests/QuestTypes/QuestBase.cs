@@ -10,7 +10,7 @@ namespace Assets.Scripts.Quests
 
         protected abstract string _description { get; }
 
-        protected abstract List<OnQuestCompleteActionBase> _onCompleteActions { get; set; }
+        protected abstract List<ExecutableActionBase> _onCompleteActions { get; set; }
 
         public bool IsCompleted { get; set; } = false;
 
@@ -27,7 +27,7 @@ namespace Assets.Scripts.Quests
             }
         }
 
-        public QuestBase(List<OnQuestCompleteActionBase> _onCompleteactions = null)
+        public QuestBase(List<ExecutableActionBase> _onCompleteactions = null)
         {
 
         }

@@ -10,7 +10,7 @@ namespace Assets.Scripts.Quests
 
         protected override string _description => "You need to talk to {0}";
 
-        protected override List<OnQuestCompleteActionBase> _onCompleteActions { get; set; } = new();
+        protected override List<ExecutableActionBase> _onCompleteActions { get; set; } = new();
 
         private CharacterEnum _targetNPC;
 
@@ -24,7 +24,7 @@ namespace Assets.Scripts.Quests
             return string.Format(_name, _targetNPC.ToString());
         }
 
-        public NPCTalkQuest(CharacterEnum targetNPC, List<OnQuestCompleteActionBase> actions = null)
+        public NPCTalkQuest(CharacterEnum targetNPC, List<ExecutableActionBase> actions = null)
         {
             _targetNPC = targetNPC;
             if (actions != null)
