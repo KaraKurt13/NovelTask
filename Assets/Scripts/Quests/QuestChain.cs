@@ -8,7 +8,7 @@ namespace Assets.Scripts.Quests
     {
         private Queue<QuestBase> _questsChane = new();
 
-        private List<QuestBase> _completedQuests = new();
+        private Stack<QuestBase> _completedQuests = new();
 
         public QuestBase CurrentQuest;
 
@@ -28,7 +28,7 @@ namespace Assets.Scripts.Quests
         {
             Step++;
             CurrentQuest.OnComplete();
-            _completedQuests.Add(CurrentQuest);
+            _completedQuests.Push(CurrentQuest);
             if (!_questsChane.TryDequeue(out var quest))
             {
                 Debug.Log("Quest chain completed!");

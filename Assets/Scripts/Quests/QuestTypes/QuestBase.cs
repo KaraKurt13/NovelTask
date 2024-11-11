@@ -12,12 +12,15 @@ namespace Assets.Scripts.Quests
 
         protected abstract List<OnQuestCompleteActionBase> _onCompleteActions { get; set; }
 
+        public bool IsCompleted { get; set; } = false;
+
         public abstract string GetName();
 
         public abstract string GetDescription();
 
         public virtual void OnComplete()
         {
+            IsCompleted = true;
             foreach (var action in _onCompleteActions)
             {
                 action.Execute();

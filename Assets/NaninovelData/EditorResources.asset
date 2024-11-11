@@ -169,6 +169,9 @@ MonoBehaviour:
     - name: Toolbar
       pathPrefix: UI
       guid: 981481781029a9e4c9ebe06a6cfc666d
+    - name: QuestLog
+      pathPrefix: UI
+      guid: a444991d144efac4aafbecf19490d4a4
   - Id: Scripts
     Resources:
     - name: Start

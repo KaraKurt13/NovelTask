@@ -32,7 +32,7 @@ namespace Assets.Scripts.Quests
         {
             if (CurrentQuestChain?.Step >= stepID) return;
             CurrentQuestChain.Advance();
-            Debug.Log($"Your current quest = {CurrentQuestChain.CurrentQuest.GetName()}");
+
             if (CurrentQuestChain.IsCompleted)
             {
                 CompletedQuests.Add(CurrentQuestChain);
