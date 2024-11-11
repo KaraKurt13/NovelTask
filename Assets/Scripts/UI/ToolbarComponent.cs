@@ -13,7 +13,7 @@ namespace Assets.Scripts.UI
 
         private void Awake()
         {
-            _mapButton.onClick.AddListener(() => Find.MapComponent.ReturnToMap());
+            _mapButton.onClick.AddListener(() => Find.UIManager.GetUI("MapUI").Show());
             _questLogButton.onClick.AddListener(() => Find.UIManager.GetUI("QuestLog").Show());
         }
     }

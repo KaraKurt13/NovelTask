@@ -49,9 +49,7 @@ namespace Assets.Scripts.Quests
             });
             var quest2 = new MiniGameQuest(new List<OnQuestCompleteActionBase>()
             {
-                new ItemRewardAction(),
                 new LocationUpdateAction(LocationEnum.Shop, LocationStatus.Unlocked),
-
             });
             var quest3 = new LocationVisitQuest(LocationEnum.Bar);
             var quest4 = new LocationVisitQuest(LocationEnum.Basement);

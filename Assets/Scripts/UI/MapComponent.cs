@@ -12,7 +12,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.UI
 {
-    public class MapComponent : MonoBehaviour
+    public class MapComponent : ComponentBase
     {
         public Dictionary<LocationEnum, Location> Locations = new();
 
@@ -21,6 +21,20 @@ namespace Assets.Scripts.UI
         [SerializeField] Button _backButton;
 
         private LocationEnum _currentLocation;
+
+        public override void Draw()
+        {
+            UpdateMap();
+            Find.UIManager.GetUI("Toolbar").Hide();
+        }
+
+        public override void Undraw()
+        {
+        }
+
+        public override void Refresh()
+        {
+        }
 
         public void UpdateMap()
         {
@@ -40,32 +54,14 @@ namespace Assets.Scripts.UI
             if (!loc.CurrentStoryScript.IsNullOrEmpty())
                 await Find.ScriptPlayer.PreloadAndPlayAsync(loc.CurrentStoryScript);
 
-            await ToggleMap(false);
             await actor.ChangeAppearanceAsync(location.ToString(), 0);
-        }
-
-        public async void ReturnToMap()
-        {
-            await ToggleMap(true);
-        }
+            Find.UIManager.GetUI("MapUI").Hide();
+            Find.UIManager.GetUI("Toolbar").Show();
+            ;        }
 
         private void Awake()
         {
             InitLocations();
-        }
-
-        private async UniTask ToggleMap(bool isActive)
-        {
-            var map = Find.UIManager.GetUI("MapUI");
-            var toolbar = Find.UIManager.GetUI("Toolbar");
-
-            foreach (var location in _locationsSubcomponents)
-            {
-                location.UpdateLocationStatus();
-            }
-
-            await map.ChangeVisibilityAsync(isActive);
-            await toolbar.ChangeVisibilityAsync(!isActive);
         }
 
         private void InitLocations()
