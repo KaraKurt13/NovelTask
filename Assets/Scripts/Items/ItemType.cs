@@ -4,16 +4,19 @@ using UnityEngine;
 
 namespace Assets.Scripts.Items
 {
-    public class Item
+    public class ItemType
     {
         public string Name { get; }
 
+        public Sprite Sprite { get; }
+
         public ItemTypeEnum Type { get; }
 
-        public Item(string name, ItemTypeEnum type)
+        public ItemType(string name, ItemTypeEnum type, Sprite sprite)
         {
             Name = name;
             Type = type;
+            Sprite = sprite;
         }
     }
 }

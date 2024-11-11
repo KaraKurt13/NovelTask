@@ -32,13 +32,10 @@ namespace Assets.Scripts.UI
 
         public async void LoadLocation(LocationEnum location)
         {
+            Find.GameController.ClearScene();
+
             var loc = Locations[location];
             var actor = Find.BackgroundManager.GetActor("Main");
-            var map = Find.UIManager.GetUI("MapUI");
-            var toolbar = Find.UIManager.GetUI("Toolbar");
-
-            Engine.GetService<ITextPrinterManager>().ResetService();
-            Engine.GetService<ICharacterManager>().ResetService();
 
             if (!loc.CurrentStoryScript.IsNullOrEmpty())
                 await Find.ScriptPlayer.PreloadAndPlayAsync(loc.CurrentStoryScript);

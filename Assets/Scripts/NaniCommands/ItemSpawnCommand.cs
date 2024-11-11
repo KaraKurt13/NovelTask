@@ -5,22 +5,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace Assets.Scripts.Nanicommands
 {
-    [CommandAlias("spawnItem")]
+    [CommandAlias("trySpawnItem")]
     public class ItemSpawnCommand : Command
     {
-        public StringParameter ItemType { get; set; }
+        [ParameterAlias("ID")]
+        public int ID;
 
         public override UniTask ExecuteAsync(AsyncToken asyncToken = default)
         {
-            if (!Enum.TryParse(ItemType, true, out ItemTypeEnum itemType))
-            {
-                throw new Exception($"Item type {ItemType} not found!");
-            }
-
-            Find.GameController.SpawnItem(itemType);
+            Find.ItemsSpawner.SpawnItem(ID);
             return UniTask.CompletedTask;
         }
     }

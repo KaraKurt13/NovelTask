@@ -1,6 +1,5 @@
 @back Street id:Main
 
-@spawn QuestTracker
 @spawn GameController
 
 #namePick
@@ -14,11 +13,8 @@ Lucy: "Your name is {PlayerName}?"
 @choice "No" goto:.namePick
 @stop
 
-@advanceQuestChain
-
 Lucy: "Well then, {PlayerName}..."
 
-@startQuestChain
 @setLocationScript location:"Basement" scriptName:"Chapter1"
 @showUI MapUI
 @hidePrinter Dialogue

@@ -8,12 +8,15 @@ using Assets.Scripts.Main;
 
 namespace Assets.Scripts.Nanicommands
 {
-    [CommandAlias("advanceQuestChain")]
+    [CommandAlias("tryAdvanceQuestChain")]
     public class AdvanceCurrentQuestChain : Command
     {
+        [ParameterAlias("stepID")]
+        public IntegerParameter StepID;
+
         public override UniTask ExecuteAsync(AsyncToken asyncToken = default)
         {
-            Find.QuestTracker.AdvanceCurrentQuestChain();
+            Find.QuestTracker.TryAdvanceCurrentQuestChain(StepID.Value);
             return UniTask.CompletedTask;
         }
     }

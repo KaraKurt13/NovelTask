@@ -7,6 +7,6 @@ namespace Assets.Scripts.Items
     public enum ItemTypeEnum
     {
         None,
-        IPhone
+        Vase
     }
 }

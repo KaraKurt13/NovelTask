@@ -5,7 +5,9 @@ Lucy: "Hi, {PlayerName}! I need you to visit Rebbeca at the Bar."
 Lucy: "I heard she wanted to play a game with you..."
 Lucy: "I wonder what kind of game?"
 
-@advanceQuestChain
+@tryStartQuestChain id:0
+
+@setLocationLock location:"Bar" lockStatus:"Unlocked"
 @setLocationScript location:"Bar" scriptName:"Chapter2"
 @setLocationScript location:"Basement" scriptName:""
 

@@ -20,5 +20,7 @@ namespace Assets.Scripts.Main
         public static MapComponent MapComponent { get; set; }
 
         public static GameController GameController { get; set; }
+
+        public static ItemsSpawner ItemsSpawner { get; set; }
     }
 }

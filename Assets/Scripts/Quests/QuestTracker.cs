@@ -19,26 +19,25 @@ namespace Assets.Scripts.Quests
             InitQuests();
         }
 
-        public void StartNewQuestChain()
+        public void TryStartNewQuestChain(int chainID)
         {
+            if (CurrentQuestChain != null || CurrentQuestChain?.ID == chainID) return;
+
             var questChain = _questChains.Dequeue();
             CurrentQuestChain = questChain;
             CurrentQuestChain.OnStart();
-            Debug.Log("New questchain has begun!");
         }
 
-        public void AdvanceCurrentQuestChain()
+        public void TryAdvanceCurrentQuestChain(int stepID)
         {
-            if (CurrentQuestChain == null) return;
-
-            Debug.Log("Quest advanced.");
+            if (CurrentQuestChain?.Step >= stepID) return;
             CurrentQuestChain.Advance();
+            Debug.Log($"Your current quest = {CurrentQuestChain.CurrentQuest.GetName()}");
             if (CurrentQuestChain.IsCompleted)
             {
                 CompletedQuests.Add(CurrentQuestChain);
                 CurrentQuestChain = null;
                 OnQuestChainComplete();
-                Debug.Log("Quest completed.");
             }
         }
 
@@ -69,7 +68,8 @@ namespace Assets.Scripts.Quests
                 quest2,
                 quest3,
                 quest4
-            });
+            }, 
+            0);
 
             _questChains.Enqueue(questChain);
         }

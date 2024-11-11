@@ -12,15 +12,21 @@ namespace Assets.Scripts.Quests
 
         public QuestBase CurrentQuest;
 
+        public int Step;
+
+        public int ID;
+
         public bool IsCompleted = false;
 
         public void OnStart()
         {
             CurrentQuest = _questsChane.Dequeue();
+            Step = 0;
         }
 
         public void Advance()
         {
+            Step++;
             CurrentQuest.OnComplete();
             _completedQuests.Add(CurrentQuest);
             if (!_questsChane.TryDequeue(out var quest))
@@ -45,7 +51,7 @@ namespace Assets.Scripts.Quests
             }
         }
         
-        public QuestChain(List<QuestBase> quests)
+        public QuestChain(List<QuestBase> quests, int ID)
         {
             foreach (var quest in quests)
             {

@@ -2,20 +2,17 @@ using Assets.Scripts.Locations;
 using Assets.Scripts.Main;
 using Naninovel;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace Assets.Scripts.Nanicommands
 {
-    [CommandAlias("setLocationScript")]
-    public class SetLocationCommand : Command
+    [CommandAlias("setLocationLock")]
+    public class SetLocationLockCommand : Command
     {
         [ParameterAlias("location")]
         public StringParameter Location;
 
-        [ParameterAlias("scriptName")]
-        public StringParameter ScriptName;
+        [ParameterAlias("lockStatus")]
+        public StringParameter LockStatus;
 
         public override UniTask ExecuteAsync(AsyncToken asyncToken = default)
         {
@@ -23,7 +20,13 @@ namespace Assets.Scripts.Nanicommands
             {
                 throw new Exception($"Invalid location value: {Location}");
             }
-            Find.MapComponent.Locations[locationEnum].SetScript(ScriptName);
+
+            if (!Enum.TryParse(LockStatus, true, out LocationStatus statusEnum))
+            {
+                throw new Exception($"Invalid location status: {LockStatus}");
+            }
+
+            Find.MapComponent.Locations[locationEnum].SetLocationStatus(statusEnum);
             return UniTask.CompletedTask;
         }
     }

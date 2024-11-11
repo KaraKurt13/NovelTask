@@ -116,12 +116,6 @@ MonoBehaviour:
     - name: GameController
       pathPrefix: Spawn
       guid: 8b8ac4e474e2e36469a089d3dee55ccf
-    - name: QuestTracker
-      pathPrefix: Spawn
-      guid: 5de3674de0a0a544c89130104015b816
-    - name: 
-      pathPrefix: Spawn
-      guid: 
   - Id: UI
     Resources:
     - name: ClickThroughPanel
@@ -199,3 +193,5 @@ MonoBehaviour:
     - name: Daily
       pathPrefix: Backgrounds/Start
       guid: 16458c36b288d1a43b7b67198e7f6206
+  - Id: Characters/2eefa29f-5861-46c0-a88e-fb1903b175bf
+    Resources: []
