@@ -18,5 +18,7 @@ namespace Assets.Scripts.Main
         public static QuestTracker QuestTracker { get; set; }
 
         public static MapComponent MapComponent { get; set; }
+
+        public static GameController GameController { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 using Assets.Scripts.Locations;
 using Assets.Scripts.Main;
 using Assets.Scripts.UI;
+using DTT.Utils.Extensions;
 using Naninovel;
 using Naninovel.UI;
 using System.Collections;
@@ -36,7 +37,10 @@ namespace Assets.Scripts.UI
             var map = Find.UIManager.GetUI("MapUI");
             var toolbar = Find.UIManager.GetUI("Toolbar");
 
-            if (loc.CurrentStoryScript != string.Empty)
+            Engine.GetService<ITextPrinterManager>().ResetService();
+            Engine.GetService<ICharacterManager>().ResetService();
+
+            if (!loc.CurrentStoryScript.IsNullOrEmpty())
                 await Find.ScriptPlayer.PreloadAndPlayAsync(loc.CurrentStoryScript);
 
             await ToggleMap(false);

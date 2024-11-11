@@ -18,6 +18,8 @@ Lucy: "Your name is {PlayerName}?"
 
 Lucy: "Well then, {PlayerName}..."
 
+@startQuestChain
+@setLocationScript location:"Basement" scriptName:"Chapter1"
 @showUI MapUI
 @hidePrinter Dialogue
 @stop

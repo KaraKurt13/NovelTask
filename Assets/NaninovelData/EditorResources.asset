@@ -183,6 +183,15 @@ MonoBehaviour:
     - name: Chapter1
       pathPrefix: Scripts
       guid: 1a066045c83753e4fa04b4df347cae53
+    - name: Chapter2
+      pathPrefix: Scripts
+      guid: 006376e979a51c7408a2f84483dbd537
+    - name: Chapter3
+      pathPrefix: Scripts
+      guid: 356f7d9b8d9ca544d888ea6b2240a1ef
+    - name: Chapter4
+      pathPrefix: Scripts
+      guid: be795523cb289704d94620fb21968ab7
   - Id: Backgrounds/0f69fed4-4d0b-45b3-ab7e-9d0fa0a4e96b
     Resources: []
   - Id: Backgrounds/96f2ddb6-8807-4708-b2be-563e7bb43be0

@@ -1,2 +1,12 @@
+#Start
+@char Lucy.Friendly scale:1 look:left pos:30,0
+
+Lucy: "Hi, {PlayerName}! I need you to visit Rebbeca at the Bar."
+Lucy: "I heard she wanted to play a game with you..."
+Lucy: "I wonder what kind of game?"
+
+@advanceQuestChain
+@setLocationScript location:"Bar" scriptName:"Chapter2"
+@setLocationScript location:"Basement" scriptName:""
 
 @stop

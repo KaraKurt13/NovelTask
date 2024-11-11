@@ -1,3 +1,4 @@
+using Assets.Scripts.Items;
 using Assets.Scripts.Quests;
 using Assets.Scripts.UI;
 using Naninovel;
@@ -9,6 +10,15 @@ namespace Assets.Scripts.Main
 {
     public class GameController : MonoBehaviour
     {
+        public List<GameObject> Items = new();
+
+        [SerializeField] GameObject _interactableItemPrefab;
+
+        public void SpawnItem(ItemTypeEnum type)
+        {
+            
+        }
+
         private void Awake()
         {
             Find.ScriptPlayer = Engine.GetService<IScriptPlayer>();

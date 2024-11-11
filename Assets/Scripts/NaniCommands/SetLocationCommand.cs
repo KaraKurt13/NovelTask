@@ -1,6 +1,7 @@
 using Assets.Scripts.Locations;
 using Assets.Scripts.Main;
 using Naninovel;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,17 +9,21 @@ using UnityEngine;
 namespace Assets.Scripts.Nanicommands
 {
     [CommandAlias("setLocationScript")]
-    public class SetLocationNaniscript : Command
+    public class SetLocationCommand : Command
     {
         [ParameterAlias("location")]
-        public LocationEnum Location;
+        public StringParameter Location;
 
         [ParameterAlias("scriptName")]
         public StringParameter ScriptName;
 
         public override UniTask ExecuteAsync(AsyncToken asyncToken = default)
         {
-            Find.MapComponent.Locations[Location].SetScript(ScriptName);
+            if (!Enum.TryParse(Location, true, out LocationEnum locationEnum))
+            {
+                throw new Exception($"Invalid location value: {Location}");
+            }
+            Find.MapComponent.Locations[locationEnum].SetScript(ScriptName);
             return UniTask.CompletedTask;
         }
     }

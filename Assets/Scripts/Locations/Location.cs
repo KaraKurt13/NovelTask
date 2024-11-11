@@ -17,11 +17,13 @@ namespace Assets.Scripts.Locations
 
         public void SetScript(string script)
         {
+            Debug.Log($"Script {script} is set!");
             CurrentStoryScript = script;
         }
 
         public void SetLocationStatus(LocationStatus status)
         {
+            Debug.Log($"Status {status} on location {Name} is set");
             Status = status;
             Find.MapComponent.UpdateMap();
         }

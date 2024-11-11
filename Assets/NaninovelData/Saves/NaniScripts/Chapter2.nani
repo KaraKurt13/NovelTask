@@ -1,0 +1,13 @@
+#Start
+@char Rebecca.Friendly scale:0.7 look:left pos:30,0
+Rebecca: "Hi, {PlayerName}! I'm so bored, so i wanted to offer you to play a game!"
+@advanceQuestChain
+;Minigame script
+
+Rebecca: "That was fun! You can find your reward in the Shop."
+
+@advanceQuestChain
+@setLocationScript location:"Basement" scriptName:""
+@setLocationScript location:"Shop" scriptName:"Chapter3"
+
+@stop

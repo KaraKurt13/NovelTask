@@ -24,28 +24,34 @@ namespace Assets.Scripts.Quests
             var questChain = _questChains.Dequeue();
             CurrentQuestChain = questChain;
             CurrentQuestChain.OnStart();
+            Debug.Log("New questchain has begun!");
         }
 
         public void AdvanceCurrentQuestChain()
         {
             if (CurrentQuestChain == null) return;
 
+            Debug.Log("Quest advanced.");
             CurrentQuestChain.Advance();
             if (CurrentQuestChain.IsCompleted)
             {
                 CompletedQuests.Add(CurrentQuestChain);
                 CurrentQuestChain = null;
                 OnQuestChainComplete();
+                Debug.Log("Quest completed.");
             }
         }
 
         private void InitQuests()
         {
-            var quest1 = new NPCTalkQuest(CharacterEnum.Rebecca);
+            var quest1 = new NPCTalkQuest(CharacterEnum.Rebecca, new List<OnQuestCompleteActionBase>()
+            {
+                new LocationUpdateAction(LocationEnum.Bar, LocationStatus.Unlocked)
+            });
             var quest2 = new MiniGameQuest(new List<OnQuestCompleteActionBase>()
             {
                 new ItemRewardAction(),
-                new LocationUpdateAction(LocationEnum.Shop, LocationStatus.Locked),
+                new LocationUpdateAction(LocationEnum.Shop, LocationStatus.Unlocked),
 
             });
             var quest3 = new LocationVisitQuest(LocationEnum.Bar);
