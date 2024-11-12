@@ -1,0 +1,13 @@
+; English <en> to Russian <ru> localization document for `Quests` managed text document
+
+Notification.New: New quest!
+Notification.Update: Quest updated!
+Notification.Finish: Quest finished!
+Type.FindItem.Name: Find {0}
+Type.FindItem.Description: Find {0} somewhere in the {1}
+Type.LocationVisit.Name: Visiting {0}
+Type.LocationVisit.Description: You need to visit {0}
+Type.MiniGame.Name: Mini-game time!
+Type.MiniGame.Description: Play minigame
+Type.NPCTalk.Name: Talking with {0}
+Type.NPCTalk.Description: You need to talk to {0}

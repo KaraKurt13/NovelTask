@@ -1,0 +1,3 @@
+; English <en> to Russian <ru> localization document for `Quests_NewQuestMessage` managed text document
+
+Assets.Scripts.UI.QuestUpdaterComponent.NewQuestText: New quest!

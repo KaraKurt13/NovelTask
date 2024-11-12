@@ -1,3 +1,4 @@
+using Naninovel;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,9 @@ namespace Assets.Scripts.Quests
 {
     public class MiniGameQuest : QuestBase
     {
-        protected override string _name => "Minigame time!";
+        protected override string _name => Engine.GetService<ITextManager>().GetRecordValue("Type.Minigame.Name", "Quests");
 
-        protected override string _description => "Play minigame";
+        protected override string _description => Engine.GetService<ITextManager>().GetRecordValue("Type.Minigame.Description", "Quests");
 
         protected override List<ExecutableActionBase> _onCompleteActions { get; set; } = new();
 

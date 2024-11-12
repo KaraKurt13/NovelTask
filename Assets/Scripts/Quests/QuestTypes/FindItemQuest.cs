@@ -1,5 +1,6 @@
 using Assets.Scripts.Items;
 using Assets.Scripts.Locations;
+using Naninovel;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +9,9 @@ namespace Assets.Scripts.Quests
 {
     public class FindItemQuest : QuestBase
     {
-        protected override string _name => "Find {0}";
+        protected override string _name => Engine.GetService<ITextManager>().GetRecordValue("Type.FindItem.Name", "Quests");
 
-        protected override string _description => "Find {0} somewhere in the {1}";
+        protected override string _description => Engine.GetService<ITextManager>().GetRecordValue("Type.FindItem.Description", "Quests");
 
         protected override List<ExecutableActionBase> _onCompleteActions { get; set; } = new();
 

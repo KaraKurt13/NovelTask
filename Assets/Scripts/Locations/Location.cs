@@ -9,11 +9,13 @@ namespace Assets.Scripts.Locations
 {
     public class Location
     {
-        public string Name { get; }
+        public string Name => Engine.GetService<ITextManager>().GetRecordValue(LocationEnum.ToString(), "Locations");
 
         public LocationStatus Status { get; private set; }
 
         public string CurrentStoryScript { get; private set; }
+
+        public LocationEnum LocationEnum { get; private set; }
 
         public void SetScript(string script)
         {
@@ -26,9 +28,9 @@ namespace Assets.Scripts.Locations
             Find.MapComponent.UpdateMap();
         }
 
-        public Location(string name, LocationStatus status, string currentStoryScript)
+        public Location(LocationEnum locationEnum, LocationStatus status, string currentStoryScript)
         {
-            Name = name;
+            LocationEnum = locationEnum;
             Status = status;
             CurrentStoryScript = currentStoryScript;
         }

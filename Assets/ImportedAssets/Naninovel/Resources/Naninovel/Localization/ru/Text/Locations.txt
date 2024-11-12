@@ -1,0 +1,5 @@
+; English <en> to Russian <ru> localization document for `Locations` managed text document
+
+Bar: Бар
+Basement: Подвал
+Shop: Магазин

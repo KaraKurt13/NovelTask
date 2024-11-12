@@ -70,15 +70,15 @@ namespace Assets.Scripts.UI
             {
                 { 
                     LocationEnum.Basement,
-                    new Location("Basement", LocationStatus.Unlocked, "")
+                    new Location(LocationEnum.Basement, LocationStatus.Unlocked, "")
                 },
                 {
                     LocationEnum.Bar,
-                    new Location("Bar", LocationStatus.Locked, "")
+                    new Location(LocationEnum.Bar, LocationStatus.Locked, "")
                 },
                 {
                     LocationEnum.Shop,
-                    new Location("Shop", LocationStatus.Locked, "")
+                    new Location(LocationEnum.Shop, LocationStatus.Locked, "")
                 }
             };
 

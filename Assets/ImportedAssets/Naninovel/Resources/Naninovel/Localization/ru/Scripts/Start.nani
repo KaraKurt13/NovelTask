@@ -1,0 +1,24 @@
+; English <en> to Russian <ru> localization document for `Start` naninovel script
+
+# 35372617
+; Lucy: "What's your name?"
+Lucy: Как тебя зовут?
+
+# 82e20b2
+; @input PlayerName
+
+# f77cca80
+; Lucy: "Your name is {PlayerName}?"
+Lucy: Твоё имя {PlayerName}?
+
+# d01d2fec
+; @choice "Yes"
+@choice "Да"
+
+# 8636479f
+; @choice "No" goto:.namePick
+@choice "Нет"
+
+# 5f5466ce
+; Lucy: "Well then, {PlayerName}..."
+Ну что же, {PlayerName}...

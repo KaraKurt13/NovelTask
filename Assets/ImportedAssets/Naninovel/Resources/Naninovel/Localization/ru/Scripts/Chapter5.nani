@@ -1,0 +1,28 @@
+; English <en> to Russian <ru> localization document for `Chapter5` naninovel script
+
+# 856c7019
+; Lucy: "You need to give item to ME!	"
+
+# 896e0e11
+; Rebecca: "DON'T YOU DARE, {PlayerName}! IT'S MINE!"
+
+# f3202efe
+; @choice "Give vase to Lucy" goto:.itemToLucy
+
+# 2c8ddae4
+; @choice "Give vase to Rebecca" goto:.itemToRebecca
+
+# ee68e09a
+; @choice "Keep it for yourself" goto:.itemForYourself
+
+# a9d18963
+; Rebecca: "Hah... As you wish..."
+
+# 38c25ad3
+; Lucy: "I didn't expect this from you..."
+
+# a9d18963
+; Rebecca: "Hah... As you wish..."
+
+# 38c25ad3
+; Lucy: "I didn't expect this from you..."

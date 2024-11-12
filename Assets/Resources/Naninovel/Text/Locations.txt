@@ -1,0 +1,3 @@
+Bar: Bar
+Basement: Basement
+Shop: Shop

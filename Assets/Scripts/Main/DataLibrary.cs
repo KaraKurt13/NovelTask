@@ -20,7 +20,7 @@ namespace Assets.Scripts.Main
             {
                 var itemName = itemType.ToString();
                 var itemSprite = Resources.Load<Sprite>($"Sprites/{itemName}");
-                var type = new ItemType(itemName, itemType, itemSprite);
+                var type = new ItemType(itemType, itemSprite);
                 ItemTypes.Add(itemType, type);
             }
 

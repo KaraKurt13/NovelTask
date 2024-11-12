@@ -1,4 +1,5 @@
 using Assets.Scripts.Locations;
+using Naninovel;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,9 @@ namespace Assets.Scripts.Quests
 {
     public class LocationVisitQuest : QuestBase
     {
-        protected override string _name => "Visiting {0}";
+        protected override string _name => Engine.GetService<ITextManager>().GetRecordValue("Type.LocationVisit.Name", "Quests");
 
-        protected override string _description => "You need to visit {0}";
+        protected override string _description => Engine.GetService<ITextManager>().GetRecordValue("Type.LocationVisit.Description", "Quests");
 
         protected override List<ExecutableActionBase> _onCompleteActions { get; set; } = new();
 

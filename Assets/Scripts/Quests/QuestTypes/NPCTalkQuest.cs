@@ -1,3 +1,4 @@
+using Naninovel;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,9 @@ namespace Assets.Scripts.Quests
 {
     public class NPCTalkQuest : QuestBase
     {
-        protected override string _name => "Talking with {0}";
+        protected override string _name => Engine.GetService<ITextManager>().GetRecordValue("Type.NPCTalk.Name", "Quests");
 
-        protected override string _description => "You need to talk to {0}";
+        protected override string _description => Engine.GetService<ITextManager>().GetRecordValue("Type.NPCTalk.Description", "Quests");
 
         protected override List<ExecutableActionBase> _onCompleteActions { get; set; } = new();
 
