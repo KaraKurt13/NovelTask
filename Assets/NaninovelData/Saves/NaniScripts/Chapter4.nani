@@ -3,5 +3,7 @@
 
 Lucy: "You need to give item to ME!"
 Rebecca: "DON'T YOU DARE, {PlayerName}! IT'S MINE!"
+
+
 @tryAdvanceQuestChain stepID:4
 @stop

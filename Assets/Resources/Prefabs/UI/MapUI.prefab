@@ -945,6 +945,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8870887954857414133}
     m_Modifications:
+    - target: {fileID: 633812081399187181, guid: 7ae4fcf0ee8ed984badf85cf09d2f09d, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3717965030892847663, guid: 7ae4fcf0ee8ed984badf85cf09d2f09d, type: 3}
       propertyPath: m_Name
       value: LocationSubcomponent

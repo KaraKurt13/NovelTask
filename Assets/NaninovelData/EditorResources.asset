@@ -172,6 +172,9 @@ MonoBehaviour:
     - name: QuestLog
       pathPrefix: UI
       guid: a444991d144efac4aafbecf19490d4a4
+    - name: QuestUpdater
+      pathPrefix: UI
+      guid: 4ddee924730bb024dbb60eccfabafa02
   - Id: Scripts
     Resources:
     - name: Start

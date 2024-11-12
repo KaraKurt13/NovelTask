@@ -37,7 +37,7 @@ namespace Assets.Scripts.Main
         private void InitData()
         {
             _interactableObjectsCanvas = GameObject.Find("InteractableObjectsCanvas").GetComponent<Canvas>();
-            ItemsSpawnData.Add(0, new ItemSpawnData(0, 500f, 500f, ItemTypeEnum.Vase, new QuestAdvanceAction(3), 3f));
+            ItemsSpawnData.Add(0, new ItemSpawnData(0, 900f, 500f, ItemTypeEnum.Vase, new QuestAdvanceAction(3), 3f));
         }
     }
 }

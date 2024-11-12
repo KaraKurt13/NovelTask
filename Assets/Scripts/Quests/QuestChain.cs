@@ -1,3 +1,4 @@
+using Assets.Scripts.Main;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,7 @@ namespace Assets.Scripts.Quests
         public void OnStart()
         {
             CurrentQuest = _questsChane.Dequeue();
+            Find.QuestUpdater.OnQuestChainAdd();
             Step = 0;
         }
 
@@ -31,16 +33,11 @@ namespace Assets.Scripts.Quests
             _completedQuests.Push(CurrentQuest);
             if (!_questsChane.TryDequeue(out var quest))
             {
-                Debug.Log("Quest chain completed!");
+                Find.QuestUpdater.OnQuestChainFinish();
                 IsCompleted = true;
                 return;
             }
             CurrentQuest = quest;
-        }
-
-        private void Complete()
-        {
-
         }
 
         public IEnumerable<QuestBase> GetCompletedQuests()

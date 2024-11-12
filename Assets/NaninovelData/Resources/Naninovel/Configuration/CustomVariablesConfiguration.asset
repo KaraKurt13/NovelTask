@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PredefinedVariables:
   - name: PlayerName
-    value: 
+    value: '"David"'
+  - name: Relations_Lucy
+    value: '"Friendly"'
+  - name: Relations_Rebecca
+    value: '"Friendly"'

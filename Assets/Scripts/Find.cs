@@ -22,5 +22,7 @@ namespace Assets.Scripts.Main
         public static GameController GameController { get; set; }
 
         public static ItemsSpawner ItemsSpawner { get; set; }
+
+        public static QuestUpdaterComponent QuestUpdater { get; set; }
     }
 }

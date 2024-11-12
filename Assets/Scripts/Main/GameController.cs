@@ -33,6 +33,7 @@ namespace Assets.Scripts.Main
             Find.QuestTracker = FindAnyObjectByType<QuestTracker>();
             Find.MapComponent = FindAnyObjectByType<MapComponent>();
             Find.ItemsSpawner = FindAnyObjectByType<ItemsSpawner>();
+            Find.QuestUpdater = FindAnyObjectByType<QuestUpdaterComponent>();
         }
     }
 }
