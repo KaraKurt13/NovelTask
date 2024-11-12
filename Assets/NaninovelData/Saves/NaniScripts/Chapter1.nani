@@ -1,4 +1,3 @@
-#Start
 @char Lucy.Friendly scale:1 look:left pos:30,0
 
 Lucy: "Hi, {PlayerName}! I need you to visit Rebbeca at the Bar."

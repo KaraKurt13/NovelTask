@@ -27,7 +27,7 @@ namespace Assets.Scripts.Main
             item.gameObject.transform.localScale = Vector3.one * itemSpawnData.Scale;
             item.DataID = spawnDataID;
             item.Activate();
-            Find.GameController.Items.Add(item.gameObject);
+            Find.GameController.InteractableItems.Add(item.gameObject);
         }
         private void Awake()
         {

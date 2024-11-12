@@ -175,6 +175,9 @@ MonoBehaviour:
     - name: QuestUpdater
       pathPrefix: UI
       guid: 4ddee924730bb024dbb60eccfabafa02
+    - name: InventoryUI
+      pathPrefix: UI
+      guid: e2bea2333303e9a45971136d48005a4e
   - Id: Scripts
     Resources:
     - name: Start
@@ -192,6 +195,15 @@ MonoBehaviour:
     - name: Chapter4
       pathPrefix: Scripts
       guid: be795523cb289704d94620fb21968ab7
+    - name: Chapter5
+      pathPrefix: Scripts
+      guid: 13aa5072aec4e724fb1a54706fa69ab1
+    - name: LucyConversation
+      pathPrefix: Scripts
+      guid: 555f8629525dcae45ac04dc94765e50b
+    - name: RebeccaConversation
+      pathPrefix: Scripts
+      guid: f1066c6656d94604f9868d37b957e661
   - Id: Backgrounds/0f69fed4-4d0b-45b3-ab7e-9d0fa0a4e96b
     Resources: []
   - Id: Backgrounds/96f2ddb6-8807-4708-b2be-563e7bb43be0

@@ -15,6 +15,7 @@ namespace Assets.Scripts.UI
         {
             _mapButton.onClick.AddListener(() => Find.UIManager.GetUI("MapUI").Show());
             _questLogButton.onClick.AddListener(() => Find.UIManager.GetUI("QuestLog").Show());
+            _inventoryButton.onClick.AddListener(() => Find.UIManager.GetUI("InventoryUI").Show());
         }
     }
 }

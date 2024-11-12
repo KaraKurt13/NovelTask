@@ -30,7 +30,7 @@ namespace Assets.Scripts.Items
         {
             var spawnData = Find.ItemsSpawner.ItemsSpawnData[DataID];
             spawnData.IsTaken = true;
-            // add to player inv
+            Find.GameController.PlayerInventory.Add(spawnData.Type);
             OnUse?.Execute();
             Destroy(this.gameObject);
         }

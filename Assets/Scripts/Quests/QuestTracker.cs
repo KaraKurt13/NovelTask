@@ -55,10 +55,20 @@ namespace Assets.Scripts.Quests
             var quest3 = new FindItemQuest(ItemTypeEnum.Vase, LocationEnum.Bar, new List<ExecutableActionBase>()
             {
                 new LocationLockUpdateAction(LocationEnum.Shop, LocationStatus.Locked),
-                new LocationScriptUpdateAction(LocationEnum.Basement,"Chapter4"),
-                new LocationLockUpdateAction(LocationEnum.Bar, LocationStatus.Locked)
+                new LocationScriptUpdateAction(LocationEnum.Bar,"Chapter4"),
+                new LocationLockUpdateAction(LocationEnum.Basement, LocationStatus.Locked)
             });
-            var quest4 = new LocationVisitQuest(LocationEnum.Basement);
+            var quest4 = new LocationVisitQuest(LocationEnum.Bar, new List<ExecutableActionBase>()
+            {
+                new LocationLockUpdateAction(LocationEnum.Basement, LocationStatus.Unlocked),
+                new LocationScriptUpdateAction(LocationEnum.Basement, "Chapter5")
+            });
+
+            var quest5 = new LocationVisitQuest(LocationEnum.Basement, new List<ExecutableActionBase>()
+            {
+                new LocationLockUpdateAction(LocationEnum.Shop, LocationStatus.Locked),
+                new LocationLockUpdateAction(LocationEnum.Bar, LocationStatus.Unlocked)
+            });
 
             var quests = new List<QuestBase>()
             {
@@ -71,7 +81,8 @@ namespace Assets.Scripts.Quests
                 quest1,
                 quest2,
                 quest3,
-                quest4
+                quest4,
+                quest5
             }, 
             0);
 

@@ -1,0 +1,12 @@
+@goto .Rebecca_happy if:"Relations_Rebecca == "Happy""
+@goto .Rebecca_angry if:"Relations_Rebecca == "Angry""	 
+
+#Rebecca_happy
+@char Rebecca.Happy scale:1.5 look:right pos:30,0
+Rebecca:"It's good to see you again!"
+@stop
+
+#Rebecca_angry
+@char Rebecca.Angry scale:1.5 look:right pos:30,0
+Rebecca:"Why are you here?"
+@stop

@@ -8,9 +8,9 @@ namespace Assets.Scripts.Quests
 {
     public class FindItemQuest : QuestBase
     {
-        protected override string _name => "Find {0}.";
+        protected override string _name => "Find {0}";
 
-        protected override string _description => "Find {0} somwhere in the {1}";
+        protected override string _description => "Find {0} somewhere in the {1}";
 
         protected override List<ExecutableActionBase> _onCompleteActions { get; set; } = new();
 
@@ -20,7 +20,7 @@ namespace Assets.Scripts.Quests
 
         public override string GetDescription()
         {
-            return string.Format(_description, _itemType, _description);
+            return string.Format(_description, _itemType, _itemLocation);
         }
 
         public override string GetName()

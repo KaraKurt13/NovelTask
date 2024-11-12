@@ -11,13 +11,15 @@ namespace Assets.Scripts.Main
 {
     public class GameController : MonoBehaviour
     {
-        public List<GameObject> Items = new();
+        public List<GameObject> InteractableItems = new();
+
+        public List<ItemTypeEnum> PlayerInventory = new();
 
         public void ClearScene()
         {
             Engine.GetService<ITextPrinterManager>().ResetService();
             Engine.GetService<ICharacterManager>().ResetService();
-            foreach (var item in Items.ToList())
+            foreach (var item in InteractableItems.ToList())
             {
                 Destroy(item);
             }
