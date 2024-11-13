@@ -1,20 +1,19 @@
 @back Street id:Main
-@spawn GameController
 
-#namePick
+# namePick
 Lucy: "What's your name?"
 @input PlayerName
 @stop
 
 Lucy: "Your name is {PlayerName}?"
 
-@choice "Yes"
-@choice "No" goto:.namePick
+@choice Yes
+@choice No goto:.namePick
 @stop
 
 Lucy: "Well then, {PlayerName}..."
 
-@setLocationScript location:"Basement" scriptName:"Chapter1"
+@setLocationScript location:Basement scriptName:Chapter1
 @showUI MapUI
 @hidePrinter Dialogue
 @stop

@@ -31,6 +31,16 @@ namespace Assets.Scripts.Main
 
         private void Awake()
         {
+            Engine.OnInitializationFinished += Init;
+        }
+
+        private void OnDestroy()
+        {
+            Engine.OnInitializationFinished -= Init;
+        }
+
+        private void Init()
+        {
             DataLibrary.Init();
             Find.GameController = this;
             Find.ScriptPlayer = Engine.GetService<IScriptPlayer>();
@@ -41,6 +51,7 @@ namespace Assets.Scripts.Main
             Find.ItemsSpawner = FindAnyObjectByType<ItemsSpawner>();
             Find.QuestUpdater = FindAnyObjectByType<QuestUpdaterComponent>();
             Find.MemoryGameManager = FindAnyObjectByType<MemoryGameManager>();
+            Debug.Log(Find.ItemsSpawner + " _ " + Find.MemoryGameManager);
         }
     }
 }
