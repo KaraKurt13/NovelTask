@@ -63,7 +63,6 @@ namespace Assets.Scripts.UI
 
         public void LoadPreviousLocation()
         {
-            Debug.Log(_previousLocation);
             if (_previousLocation == LocationEnum.None)
                 return;
             LoadLocation(_previousLocation);
