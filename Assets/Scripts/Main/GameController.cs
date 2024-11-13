@@ -52,7 +52,6 @@ namespace Assets.Scripts.Main
             Find.ItemsSpawner = FindAnyObjectByType<ItemsSpawner>();
             Find.QuestUpdater = FindAnyObjectByType<QuestUpdaterComponent>();
             Find.MemoryGameManager = FindAnyObjectByType<MemoryGameManager>();
-            Debug.Log(Find.ItemsSpawner + " _ " + Find.MemoryGameManager);
         }
     }
 }
