@@ -26,6 +26,7 @@ namespace Assets.Scripts.Main
             foreach (var item in InteractableItems.ToList())
             {
                 Destroy(item);
+                InteractableItems.Remove(item);
             }
         }
 
