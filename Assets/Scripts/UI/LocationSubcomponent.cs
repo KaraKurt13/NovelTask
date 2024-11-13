@@ -22,6 +22,7 @@ namespace Assets.Scripts.UI
 
         public void UpdateLocationStatus()
         {
+            _nameText.text = RelatedLocation.Name;
             var isLocked = RelatedLocation.Status == LocationStatus.Locked;
             ChangeLocationLock(isLocked);
         }

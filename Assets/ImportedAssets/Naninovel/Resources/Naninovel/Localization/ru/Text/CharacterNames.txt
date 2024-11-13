@@ -1,4 +1,2 @@
-; English <en> to Russian <ru> localization document for `CharacterNames` managed text document
-
 Character_1: Character_1
 Character_2: Character_2

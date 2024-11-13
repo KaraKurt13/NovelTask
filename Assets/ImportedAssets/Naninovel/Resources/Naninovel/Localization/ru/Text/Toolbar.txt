@@ -1,5 +1,3 @@
-; English <en> to Russian <ru> localization document for `Toolbar` managed text document
-
 Inventory: Инвентарь
 Map: Карта
 Quests: Задания

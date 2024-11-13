@@ -2,9 +2,11 @@
 
 # 7ec65398
 ; Lucy: "Hi, {PlayerName}! I need you to visit Rebbeca at the Bar."
-
+Lucy: Привет, {PlayerName}! Мне нужно чтобы ты проведал Реббеку в Баре.
 # ce89a026
 ; Lucy: "I heard she wanted to play a game with you..."
-
+Lucy: Я слышала, она хочет сыграть с тобой в игру...
 # 58f3dff2
 ; Lucy: "I wonder what kind of game?"
+Lucy: Интересно, что за игра?
+

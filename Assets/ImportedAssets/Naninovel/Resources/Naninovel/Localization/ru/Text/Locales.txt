@@ -1,5 +1,3 @@
-; English <en> to Russian <ru> localization document for `Locales` managed text document
-
 af: Afrikaans
 af-ZA: Afrikaans (South Africa)
 ar: Arabic

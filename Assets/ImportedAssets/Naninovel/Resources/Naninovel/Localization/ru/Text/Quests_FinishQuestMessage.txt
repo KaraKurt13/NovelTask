@@ -1,3 +1,0 @@
-; English <en> to Russian <ru> localization document for `Quests_FinishQuestMessage` managed text document
-
-Assets.Scripts.UI.QuestUpdaterComponent.FinishQuestText: Quest finished!

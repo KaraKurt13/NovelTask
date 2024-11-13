@@ -1,3 +1,1 @@
-; English <en> to Russian <ru> localization document for `Items` managed text document
-
-Vase: Vase
+Vase: Ваза

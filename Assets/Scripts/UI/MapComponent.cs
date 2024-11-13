@@ -20,10 +20,11 @@ namespace Assets.Scripts.UI
 
         [SerializeField] Button _backButton;
 
-        private LocationEnum _currentLocation;
+        private LocationEnum _previousLocation;
 
         public override void Draw()
         {
+            Find.GameController.ClearScene();
             UpdateMap();
             Find.UIManager.GetUI("Toolbar").Hide();
         }
@@ -46,9 +47,9 @@ namespace Assets.Scripts.UI
 
         public async void LoadLocation(LocationEnum location)
         {
-            Find.GameController.ClearScene();
-
             var loc = Locations[location];
+            if (loc.Status == LocationStatus.Locked) return;
+
             var actor = Find.BackgroundManager.GetActor("Main");
 
             if (!loc.CurrentStoryScript.IsNullOrEmpty())
@@ -57,11 +58,21 @@ namespace Assets.Scripts.UI
             await actor.ChangeAppearanceAsync(location.ToString(), 0);
             Find.UIManager.GetUI("MapUI").Hide();
             Find.UIManager.GetUI("Toolbar").Show();
-            ;        }
+            _previousLocation = location;
+        }
+
+        public void LoadPreviousLocation()
+        {
+            Debug.Log(_previousLocation);
+            if (_previousLocation == LocationEnum.None)
+                return;
+            LoadLocation(_previousLocation);
+        }
 
         private void Awake()
         {
             InitLocations();
+            _backButton.onClick.AddListener(LoadPreviousLocation);
         }
 
         private void InitLocations()

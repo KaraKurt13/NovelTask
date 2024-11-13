@@ -1,5 +1,3 @@
-; English <en> to Russian <ru> localization document for `DefaultUI` managed text document
-
 CGGallery.Title: CG GALLERY
 Confirmation.No: NO
 Confirmation.Yes: YES
@@ -62,10 +60,10 @@ SettingsMenu.VolumeMaster: Master volume:
 SettingsMenu.VolumeMusic: Music volume:
 SettingsMenu.VolumeVoice: Voice volume:
 TitleMenu.CGGallery: CG GALLERY
-TitleMenu.Continue: CONTINUE
-TitleMenu.Exit: EXIT
+TitleMenu.Continue: Продолжить
+TitleMenu.Exit: Выйти
 TitleMenu.ExternalScripts: EXTERNAL SCRIPTS
-TitleMenu.NewGame: NEW GAME
-TitleMenu.Settings: SETTINGS
-TitleMenu.Tips: TIPS
-VariableInput.Submit: SUBMIT
+TitleMenu.NewGame: Новая игра
+TitleMenu.Settings: Настройки
+TitleMenu.Tips: Советы
+VariableInput.Submit: Принять

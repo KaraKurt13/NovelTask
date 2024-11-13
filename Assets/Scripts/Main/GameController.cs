@@ -2,6 +2,7 @@ using Assets.Scripts.Items;
 using Assets.Scripts.Quests;
 using Assets.Scripts.UI;
 using Naninovel;
+using Naninovel.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,9 @@ namespace Assets.Scripts.Main
 
         public List<ItemTypeEnum> PlayerInventory = new();
 
-        public void ClearScene()
+        public async void ClearScene()
         {
-            Engine.GetService<ITextPrinterManager>().ResetService();
+            await Engine.GetService<ITextPrinterManager>().GetActor("Dialogue").ChangeVisibilityAsync(false, 0);
             Engine.GetService<ICharacterManager>().ResetService();
             foreach (var item in InteractableItems.ToList())
             {

@@ -2,27 +2,29 @@
 
 # 856c7019
 ; Lucy: "You need to give item to ME!	"
-
+Lucy: Тебе нужно отдать предмет МНЕ!
 # 896e0e11
 ; Rebecca: "DON'T YOU DARE, {PlayerName}! IT'S MINE!"
-
+Rebecca: НЕ СМЕЙ, {PlayerName}! ЭТО МОЁ!
 # f3202efe
 ; @choice "Give vase to Lucy" goto:.itemToLucy
-
+@choice "Дать вазу Люси"
 # 2c8ddae4
 ; @choice "Give vase to Rebecca" goto:.itemToRebecca
-
+@choice "Дать вазу Ребекке"
 # ee68e09a
 ; @choice "Keep it for yourself" goto:.itemForYourself
-
+@choice "Оставить её себе"
 # a9d18963
 ; Rebecca: "Hah... As you wish..."
-
+Rebecca: Пф... Как пожелаешь...
 # 38c25ad3
 ; Lucy: "I didn't expect this from you..."
-
+Lucy: Не ожидала такого от тебя...
 # a9d18963
 ; Rebecca: "Hah... As you wish..."
-
+Rebecca: Пф... Как пожелаешь...
 # 38c25ad3
 ; Lucy: "I didn't expect this from you..."
+Lucy: Не ожидала такого от тебя...
+
