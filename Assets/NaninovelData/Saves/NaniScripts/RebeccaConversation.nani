@@ -2,7 +2,7 @@
 @goto .Rebecca_angry if:"Relations_Rebecca == "Angry""	 
 
 #Rebecca_happy
-@char Rebecca.Happy scale:1.5 look:right pos:30,0
+@char Rebecca.Happy scale:0.7 look:right pos:30,0
 Rebecca:"It's good to see you again!"
 @stop
 

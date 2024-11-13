@@ -17,7 +17,7 @@ Lucy: Твоё имя {PlayerName}?
 
 # 8636479f
 ; @choice "No" goto:.namePick
-@choice "Нет"
+@choice "Нет" goto:.namePick
 
 # 5f5466ce
 ; Lucy: "Well then, {PlayerName}..."
