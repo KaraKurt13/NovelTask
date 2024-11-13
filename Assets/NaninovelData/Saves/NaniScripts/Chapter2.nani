@@ -1,11 +1,12 @@
 #Start
 @char Rebecca.Friendly scale:0.7 look:left pos:30,0
 Rebecca: "Hi, {PlayerName}! I'm so bored, so i wanted to offer you to play a game!"
-@tryAdvanceQuestChain stepID:1
-;Minigame script
+@startMemoryGame
 
 Rebecca: "That was fun! You can find your reward in the Shop."
 
+@wait i
+@tryAdvanceQuestChain stepID:1
 @tryAdvanceQuestChain stepID:2
 @setLocationScript location:"Basement" scriptName:""
 @setLocationScript location:"Bar" scriptName:""

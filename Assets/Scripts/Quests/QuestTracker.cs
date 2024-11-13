@@ -32,6 +32,7 @@ namespace Assets.Scripts.Quests
         public void TryAdvanceCurrentQuestChain(int stepID)
         {
             if (CurrentQuestChain?.Step >= stepID) return;
+
             CurrentQuestChain.Advance();
 
             if (CurrentQuestChain.IsCompleted)

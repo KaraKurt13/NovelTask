@@ -1,5 +1,6 @@
 using Assets.Scripts.Quests;
 using Assets.Scripts.UI;
+using DTT.MinigameMemory;
 using Naninovel;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,5 +25,7 @@ namespace Assets.Scripts.Main
         public static ItemsSpawner ItemsSpawner { get; set; }
 
         public static QuestUpdaterComponent QuestUpdater { get; set; }
+
+        public static MemoryGameManager MemoryGameManager { get; set; }
     }
 }

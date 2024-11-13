@@ -178,6 +178,9 @@ MonoBehaviour:
     - name: InventoryUI
       pathPrefix: UI
       guid: e2bea2333303e9a45971136d48005a4e
+    - name: MemoryGame
+      pathPrefix: UI
+      guid: f0a4ccfb987a15d45bff610b3a326216
   - Id: Scripts
     Resources:
     - name: Start

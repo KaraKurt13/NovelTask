@@ -36,8 +36,8 @@ MonoBehaviour:
   InsertLineModifier: 2
   SaveScriptKey: 115
   SaveScriptModifier: 2
-  RewindMouseButton: 0
-  RewindModifier: 1
+  RewindMouseButton: -1
+  RewindModifier: 0
   EditorPageLength: 300
   EditorCustomStyleSheet: {fileID: 0}
   GraphOrientation: 1

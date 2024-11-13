@@ -1,6 +1,7 @@
 using Assets.Scripts.Items;
 using Assets.Scripts.Quests;
 using Assets.Scripts.UI;
+using DTT.MinigameMemory;
 using Naninovel;
 using Naninovel.UI;
 using System.Collections;
@@ -15,6 +16,8 @@ namespace Assets.Scripts.Main
         public List<GameObject> InteractableItems = new();
 
         public List<ItemTypeEnum> PlayerInventory = new();
+
+        public MemoryGameSettings MemoryGameSettings;
 
         public async void ClearScene()
         {
@@ -37,6 +40,7 @@ namespace Assets.Scripts.Main
             Find.MapComponent = FindAnyObjectByType<MapComponent>();
             Find.ItemsSpawner = FindAnyObjectByType<ItemsSpawner>();
             Find.QuestUpdater = FindAnyObjectByType<QuestUpdaterComponent>();
+            Find.MemoryGameManager = FindAnyObjectByType<MemoryGameManager>();
         }
     }
 }

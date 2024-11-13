@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d642d6d94a45640896ac347f8c9896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Items: []
+  InteractableItems: []
+  PlayerInventory: 
+  MemoryGameSettings: {fileID: 11400000, guid: 934ca45e31c56bb43b2e09a0b35e025c, type: 2}
 --- !u!114 &4224795087511895408
 MonoBehaviour:
   m_ObjectHideFlags: 0
