@@ -7,8 +7,8 @@ Lucy: "What's your name?"
 
 Lucy: "Your name is {PlayerName}?"
 
-@choice Yes
-@choice No goto:.namePick
+@choice "Yes"
+@choice "No" goto:.namePick
 @stop
 
 Lucy: "Well then, {PlayerName}..."

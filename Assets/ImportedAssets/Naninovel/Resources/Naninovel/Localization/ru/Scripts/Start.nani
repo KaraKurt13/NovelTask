@@ -13,11 +13,11 @@ Lucy: Твоё имя {PlayerName}?
 
 # d01d2fec
 ; @choice "Yes"
-@choice Да
+@choice "Да"
 
 # 8636479f
 ; @choice "No" goto:.namePick
-@choice Нет
+@choice "Нет"
 
 # 5f5466ce
 ; Lucy: "Well then, {PlayerName}..."
